@@ -5,25 +5,28 @@ import java.util.Scanner;
 
 public class Tuyen implements Serializable {
     private int id;
-    private String distance;
-    private int stationNum;
-    private int sId=100;
+    private int khoangCach;
+    private int soDiemDung;
+    private static int sId=101;
 
     public Tuyen(){
-this.id = sId+1;
+        this.id = sId++;
     }
 
-    public Tuyen( String distance, int stationNum, int sId) {
-        this.id = sId+1;
-        this.distance = distance;
-        this.stationNum = stationNum;
-        this.sId = sId;
+    public Tuyen(int id, int khoangCach, int soDiemDung) {
+        this.id = sId++;
+        this.khoangCach = khoangCach;
+        this.soDiemDung = soDiemDung;
     }
 
-    public Tuyen(String distance, int stationNum) {
+
+    public void inputInfo(){
+        System.out.println("Nhập khoảng cách : ");
+        this.khoangCach = new Scanner(System.in).nextInt();
+        System.out.println("Nhập số điểm dừng:");
+        this.soDiemDung = new Scanner(System.in).nextInt();
     }
 
-    // ____________________________
 
     public int getId() {
         return id;
@@ -33,27 +36,28 @@ this.id = sId+1;
         this.id = id;
     }
 
-    public String getDistance() {
-        return distance;
+    public int getKhoangCach() {
+        return khoangCach;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public void setKhoangCach(int khoangCach) {
+        this.khoangCach = khoangCach;
     }
 
-    public int getStationNum() {
-        return stationNum;
+    public int getSoDiemDung() {
+        return soDiemDung;
     }
 
-    public void setStationNum(int stationNum) {
-        this.stationNum = stationNum;
+    public void setSoDiemDung(int soDiemDung) {
+        this.soDiemDung = soDiemDung;
     }
 
-    public int getsId() {
-        return sId;
-    }
-
-    public void setsId(int sId) {
-        this.sId = sId;
+    @Override
+    public String toString() {
+        return "Tuyen Info-- |" +
+                "id=" + id +
+                ", Khoảng cách: " + khoangCach + '\'' +
+                ", Số điểm dừng: " + soDiemDung +
+                '|';
     }
 }

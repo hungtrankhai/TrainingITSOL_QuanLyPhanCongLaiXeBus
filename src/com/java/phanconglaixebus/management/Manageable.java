@@ -6,12 +6,7 @@ import java.util.List;
 
 public interface Manageable {
 
-     public void inputTaskTable();
-
-     <T> void writeToFile(List<T> list, String fileName);
-
-     <T> List<T> readFromFile(String fileName);
-
-     <T> List<T> sortByName(List<T> list);
+     void getTongKhoangCachChayCuaLx();
+     <T> List<T> sortByName(List<Driver> driverList);
 
 }
